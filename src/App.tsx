@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
+//
 import MainPage from "components/pages/MainPage";
 import SearchPage from "components/pages/SearchPage";
 import CityPage from "components/pages/CityPage";
-//
 import { CitiesActions } from "redux/cities/slice";
-
 //
 
 function App() {
@@ -14,6 +13,7 @@ function App() {
     useEffect(() => {
         dispatch(CitiesActions.initAppSaga());
     }, [dispatch]);
+
     return (
         <div className="container">
             <Routes>

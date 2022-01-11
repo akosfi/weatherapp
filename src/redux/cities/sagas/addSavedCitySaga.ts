@@ -24,13 +24,12 @@ function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSaved
             `/weather?q=${city.name}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
         );
 
-        console.log(weatherData);
 
         const savedCity: SavedCity = {
             id: cityId,
             name: city.name,
             weather: {
-                iconType: weatherData.weather[0].icon,
+                iconId: weatherData.weather[0].id,
                 description: weatherData.weather[0].description,
                 temp: weatherData.main.temp,
                 sunrise: weatherData.sys.sunrise,

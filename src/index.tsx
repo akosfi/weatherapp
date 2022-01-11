@@ -4,12 +4,13 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 //
 import App from "./App";
-//@ts-ignore
-import registerServiceWorker from "./registerServiceWorker";
 import store from "redux/store";
 //
 import "./assets/global/style.css";
+import "./assets/global/weather-icons.min.css";
 
+//@ts-ignore
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
     <StrictMode>

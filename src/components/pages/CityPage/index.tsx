@@ -31,26 +31,18 @@ const CityPage: FC = () => {
                 <p className="time">{currentDate.hour}<br />{currentDate.minute}</p>
                 <p className="city">{savedCity.name}</p>
 
-                <img
-                    src="https://thumbs.dreamstime.com/b/temporary-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-changed-101630863.jpg"
-                    className="temp-image" />
+                <i className={`temp-image wi wi-owm-night-${savedCity.weather.iconId}`} />
                 <p className="temp-description">{savedCity.weather.description}</p>
                 <div className="temp-details">
-                    <img
-                        src="https://thumbs.dreamstime.com/b/temporary-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-changed-101630863.jpg"
-                        className="temp-details-image" />
+                    <i className="temp-details-image wi wi-thermometer" />
                     <p className="temp-details-text">{savedCity.weather.temp}&#8451;</p>
                 </div>
                 <div className="temp-details">
-                    <img
-                        src="https://thumbs.dreamstime.com/b/temporary-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-changed-101630863.jpg"
-                        className="temp-details-image" />
+                    <i className="temp-details-image wi wi-sunrise" />
                     <p className="temp-details-text">{`${sunriseDate.hour}:${sunriseDate.minute}`}</p>
                 </div>
                 <div className="temp-details">
-                    <img
-                        src="https://thumbs.dreamstime.com/b/temporary-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-changed-101630863.jpg"
-                        className="temp-details-image" />
+                    <i className="temp-details-image wi wi-sunset" />
                     <p className="temp-details-text">{`${sunsetDate.hour}:${sunsetDate.minute}`}</p>
                 </div>
             </div>

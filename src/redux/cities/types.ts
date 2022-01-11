@@ -4,7 +4,7 @@ export type City = {
 }
 
 export type Weather = {
-    iconType: string;
+    iconId: number;
     description: string;
     temp: number;
     sunrise: number;
