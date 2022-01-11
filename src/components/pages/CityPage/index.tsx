@@ -14,8 +14,11 @@ const CityPage: FC = () => {
     const savedCity = useSelector(CitiesSelectors.createGetFindSavedCityById(Number(id)));
 
     const currentDate = useFormattedTimeFromDate(new Date());
-    const sunriseDate = useFormattedTimeFromDate(new Date(savedCity?.weather.sunrise || new Date()));
-    const sunsetDate = useFormattedTimeFromDate(new Date(savedCity?.weather.sunset || new Date()));
+
+    const sunriseTimeStamp = !!savedCity ? savedCity.weather.sunrise * 1000 : 0;
+    const sunsetTimeStamp = !!savedCity ? savedCity.weather.sunset * 1000 : 0;
+    const sunriseDate = useFormattedTimeFromDate(new Date(sunriseTimeStamp || new Date()));
+    const sunsetDate = useFormattedTimeFromDate(new Date(sunsetTimeStamp || new Date()));
 
     if (!savedCity) {
         return null;

@@ -17,7 +17,7 @@ function* loadDefaultCitiesSaga() {
         }));
 
         yield put(CitiesActions.loadDefaultCitiesSuccess({ cities }));
-        yield put(CitiesActions.addSavedCityRequest({ cityId: 130 }));
+
 
     } catch (e) {
 

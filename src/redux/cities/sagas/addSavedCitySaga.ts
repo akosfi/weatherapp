@@ -33,8 +33,8 @@ function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSaved
                 iconType: weatherData.weather[0].icon,
                 description: weatherData.weather[0].description,
                 temp: weatherData.main.temp,
-                sunrise: weatherData.sys.sunset,
-                sunset: weatherData.sys.sunrise
+                sunrise: weatherData.sys.sunrise,
+                sunset: weatherData.sys.sunset
             }
         };
 

@@ -12,7 +12,7 @@ import { CitiesActions } from "redux/cities/slice";
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(CitiesActions.loadDefaultCitiesRequest());
+        dispatch(CitiesActions.initAppSaga());
     }, [dispatch]);
     return (
         <div className="container">

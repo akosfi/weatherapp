@@ -8,6 +8,7 @@ const citiesSlice = createSlice({
     name: "CITIES",
     initialState,
     reducers: {
+        initAppSaga: noop as CaseReducer,
         loadDefaultCitiesRequest: noop as CaseReducer,
 
         loadDefaultCitiesSuccess: (state, action: PayloadAction<{ cities: City[] }>) => {
