@@ -17,7 +17,7 @@ const MainPage: FC = () => {
     return <div className="MainPage">
         <div className="city-list">
             {map(savedCities, ({ id, name }) =>
-                <p className="city-list-item" onClick={createHandleOnClick(`/city/${id}`)}>{name}</p>
+                <p key={id} className="city-list-item" onClick={createHandleOnClick(`/city/${id}`)}>{name}</p>
             )}
             <p className="city-list-button" onClick={createHandleOnClick("/search")}>+</p>
         </div>

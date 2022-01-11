@@ -7,8 +7,8 @@ export type Weather = {
     iconType: string;
     description: string;
     temp: number;
-    sunrise: string;
-    sunset: string;
+    sunrise: number;
+    sunset: number;
 }
 
 export type SavedCity = {

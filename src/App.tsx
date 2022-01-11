@@ -19,7 +19,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/search" element={<SearchPage />} />
-                <Route path="/city" element={<CityPage />} />
+                <Route path="/city/:id" element={<CityPage />} />
             </Routes>
         </div>
     );
