@@ -1,0 +1,10 @@
+
+.SearchBarResult {
+    font-size: 48px;
+    font-weight: bold;
+    color: #645eff;
+}
+
+.SearchBarResult span {
+    color: #9fa6c9;
+}

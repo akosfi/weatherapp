@@ -1,0 +1,16 @@
+.SearchBar {
+    width: 100%;
+}
+
+.SearchBar .search-bar {
+    font-size: 48px;
+    font-weight: bold;
+    color: #9fa6c9;
+    width: 100%;
+    display: block;
+    border: 0;
+    background: #191647;
+    border-bottom: 1px solid #645eff;
+    margin-bottom: 24px;
+}
+

@@ -1,21 +1,27 @@
-import React, { FC, memo } from "react";
+import React, { FC, memo, useState } from "react";
+import { useDispatch } from "react-redux";
 //
 import BackButton from "components/common/BackButton";
+import SearchBar from "components/pages/SearchPage/components/SearchBar";
+import { CitiesActions } from "redux/cities/slice";
 //
 import "./style.css";
 
-const SearchPage: FC = () =>
-    <div className="SearchPage">
+const SearchPage: FC = () => {
+    const [selectedCityId, setSelectedCityId] = useState<number | null>(null);
+
+    const dispatch = useDispatch();
+
+    const handleSaveClick = () => dispatch(CitiesActions.addSavedCityRequest({ cityId: selectedCityId as number }));
+
+
+    return <div className="SearchPage">
         <div className="content">
             <BackButton href={"/"} />
-            <div className="search">
-                <input type="text" className="search-bar" />
-                <div className="search-results">
-                    <p className="search-results-item"><span>Ma</span>laga</p>
-                </div>
-            </div>
-            <div className="save-button">Save</div>
+            <SearchBar selectedCityId={selectedCityId} setSelectedCityId={setSelectedCityId} />
+            {selectedCityId !== null && <div className="save-button" onClick={handleSaveClick}>Save</div>}
         </div>
     </div>;
+};
 
 export default memo(SearchPage);

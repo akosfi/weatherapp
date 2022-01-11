@@ -17,9 +17,7 @@ const citiesSlice = createSlice({
 
         loadDefaultCitiesError: noop,
 
-        addSavedCityRequest: (state, action) => {
-
-        },
+        addSavedCityRequest: (state, action: PayloadAction<{ cityId: number }>) => {},
 
         addSavedCitySuccess: (state, action: PayloadAction<{ savedCities: SavedCity[] }>) => {
             state.savedCities = action.payload.savedCities;

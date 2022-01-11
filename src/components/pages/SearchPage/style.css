@@ -8,33 +8,6 @@
     position: relative;
 }
 
-.SearchPage .content .search {
-    width: 100%;
-}
-
-.SearchPage .content .search .search-bar {
-    font-size: 48px;
-    font-weight: bold;
-    color: #9fa6c9;
-    width: 100%;
-    display: block;
-    border: 0;
-    background: #191647;
-    border-bottom: 1px solid #645eff;
-    margin-bottom: 24px;
-}
-
-.SearchPage .content .search .search-results .search-results-item {
-    font-size: 48px;
-    font-weight: bold;
-    color: #645eff;
-}
-
-.SearchPage .content .search .search-results .search-results-item span {
-    color: #9fa6c9;
-}
-
-
 .SearchPage .content .save-button {
     position: absolute;
     bottom: 16px;
