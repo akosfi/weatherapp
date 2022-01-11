@@ -1,0 +1,24 @@
+.MainPage {}
+
+.MainPage .city-list {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MainPage .city-list .city-list-item {
+    font-size: 48px;
+    font-weight: bold;
+    color: #9fa6c9;
+    margin-bottom: 24px;
+}
+
+.MainPage .city-list .city-list-button {
+    font-size: 48px;
+    font-weight: bold;
+    color: #04ff00;
+    margin-bottom: 24px;
+}

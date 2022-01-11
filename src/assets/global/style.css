@@ -2,3 +2,13 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background: #191647;
+}
+
+.container {
+    max-width: 600px;
+    width: 100vw;
+    margin: 0 auto;
+}

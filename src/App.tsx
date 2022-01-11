@@ -1,6 +1,9 @@
-import React, { memo, useEffect } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import MainPage from "components/pages/MainPage";
+import SearchPage from "components/pages/SearchPage";
+import CityPage from "components/pages/CityPage";
 //
 //import { CitiesActions } from "redux/cities/slice";
 
@@ -9,10 +12,16 @@ import { useDispatch } from "react-redux";
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
-  //      dispatch(CitiesActions.loadDefaultCitiesRequest());
+        //      dispatch(CitiesActions.loadDefaultCitiesRequest());
     }, [dispatch]);
     return (
-        <h2>a</h2>
+        <div className="container">
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/search" element={<SearchPage />} />
+                <Route path="/city" element={<CityPage />} />
+            </Routes>
+        </div>
     );
 }
 

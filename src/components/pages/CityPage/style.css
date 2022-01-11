@@ -1,0 +1,54 @@
+.CityPage {
+  padding: 0 16px;
+}
+
+.CityPage .content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.CityPage .information {
+  text-align: center;
+}
+
+
+.CityPage .information .time {
+  font-size: 48px;
+  font-weight: bold;
+  color: #645eff;
+}
+
+.CityPage .information .city {
+  font-size: 48px;
+  font-weight: bold;
+  color: #9fa6c9;
+}
+
+.CityPage .information .temp-image {
+  width: 88px;
+  margin-top: 128px;
+}
+
+.CityPage .information .temp-description {
+  font-size: 16px;
+  font-weight: bold;
+  color: #9fa6c9;
+  margin-bottom: 24px;
+}
+
+.CityPage .information .temp-details {
+  display: flex;
+  width: 88px;
+  align-items: center;
+  margin: 0 auto 24px auto;
+}
+.CityPage .information .temp-details .temp-details-image {
+  flex: 0 0 33%;
+  width: 33%;
+  display: block;
+}
+.CityPage .information .temp-details .temp-details-text {
+  flex: 0 0 66%;
+  color: #645eff;
+}
