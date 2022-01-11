@@ -9,8 +9,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 
 function composeEnhancers() {
-    if (typeof window !== "undefined" && typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ !== "undefined") {
-        return window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+    if (typeof window !== "undefined" && typeof (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ !== "undefined") {
+        return (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
     }
     return compose;
 }

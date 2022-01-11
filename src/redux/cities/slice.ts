@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, CaseReducer } from "@reduxjs/toolkit";
 import { noop } from "lodash";
 //
 import initialState from "./state";
@@ -7,7 +7,7 @@ const citiesSlice = createSlice({
     name: "CITIES",
     initialState,
     reducers: {
-        loadDefaultCitiesRequest: noop,
+        loadDefaultCitiesRequest: noop as CaseReducer,
 
         loadDefaultCitiesSuccess: (state, action) => {
             state.defaultCities = action.payload.cities;
