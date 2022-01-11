@@ -1,10 +1,10 @@
-import { City } from "redux/cities/types";
+import { City, SavedCity } from "redux/cities/types";
 
-export type CitiesState = { defaultCities: City[], selectedCities: []}
+export type CitiesState = { defaultCities: City[], savedCities: SavedCity[]}
 
 export const initialState: CitiesState = {
     defaultCities: [],
-    selectedCities: []
+    savedCities: []
 };
 
 

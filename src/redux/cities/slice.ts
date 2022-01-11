@@ -1,7 +1,8 @@
-import { createSlice, CaseReducer } from "@reduxjs/toolkit";
+import { createSlice, CaseReducer, PayloadAction } from "@reduxjs/toolkit";
 import { noop } from "lodash";
 //
-import initialState from "./state";
+import initialState from "redux/cities/state";
+import { City, SavedCity } from "redux/cities/types";
 
 const citiesSlice = createSlice({
     name: "CITIES",
@@ -9,19 +10,21 @@ const citiesSlice = createSlice({
     reducers: {
         loadDefaultCitiesRequest: noop as CaseReducer,
 
-        loadDefaultCitiesSuccess: (state, action) => {
+        loadDefaultCitiesSuccess: (state, action: PayloadAction<{ cities: City[] }>) => {
             state.defaultCities = action.payload.cities;
         },
 
         loadDefaultCitiesError: noop,
 
-        addCityRequest: (state, action) => {},
+        addSavedCityRequest: (state, action) => {
 
-        addCitySuccess: (state, action) => {
-            //TODO
         },
 
-        addCityError: noop
+        addSavedCitySuccess: (state, action: PayloadAction<{ savedCities: SavedCity[] }>) => {
+            state.savedCities = action.payload.savedCities;
+        },
+
+        addSavedCityError: noop
     }
 });
 

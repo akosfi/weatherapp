@@ -1,15 +1,15 @@
 import { takeLatest, all } from "redux-saga/effects";
 //
-import { CitiesActions } from "./slice";
-import loadDefaultCitiesSaga from "./sagas/loadDefaultCitiesSaga";
-import addCitySaga from "./sagas/addCitySaga";
+import { CitiesActions } from "redux/cities/slice";
+import loadDefaultCitiesSaga from "redux/cities/sagas/loadDefaultCitiesSaga";
+import addSavedCitySaga from "redux/cities/sagas/addSavedCitySaga";
 
 //
 
 function* citiesSaga() {
     yield all([
         takeLatest(CitiesActions.loadDefaultCitiesRequest.type, loadDefaultCitiesSaga),
-        takeLatest(CitiesActions.addCityRequest.type, addCitySaga)
+        takeLatest(CitiesActions.addSavedCityRequest.type, addSavedCitySaga)
     ]);
 }
 
