@@ -1,8 +1,8 @@
-import { retry, select } from "redux-saga/effects";
+import { call, select } from "redux-saga/effects";
 import { find } from "lodash";
 //
-import openWeatherAppApi from "../../../utils/api/openWeatherAppApi";
 import CitiesSelectors from "../selectors";
+import fetchWeatherForCity from "./helpers/fetchWeatherForCity";
 
 function* addCitySaga(action) {
     try {
@@ -15,13 +15,7 @@ function* addCitySaga(action) {
             throw new Error("City not found.");
         }
 
-        const { data: citiesData } = yield retry(
-            3,
-            1500,
-            openWeatherAppApi.get,
-            `/weather?q=${city.name}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`
-        );
-
+        const weather = yield call(fetchWeatherForCity, city.name);
 
     } catch (e) {
 
