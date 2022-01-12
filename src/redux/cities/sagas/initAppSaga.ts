@@ -8,9 +8,14 @@ function* initAppSaga() {
     try {
         yield put(CitiesActions.loadDefaultCitiesRequest());
 
-        yield take([
-            CitiesActions.loadDefaultCitiesSuccess.type
+
+        const action: ReturnType<typeof CitiesActions.loadDefaultCitiesSuccess | typeof CitiesActions.loadDefaultCitiesError> = yield take([
+            CitiesActions.loadDefaultCitiesSuccess.type, CitiesActions.loadDefaultCitiesError.type
         ]);
+
+        if (action.type === CitiesActions.loadDefaultCitiesError.type) {
+            return;
+        }
 
         const defaultCity: City = yield select(CitiesSelectors.createGetFindDefaultCityByName("Budapest"));
 
