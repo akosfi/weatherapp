@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 //
-import { CitiesReducer } from "./cities/slice";
+import { CitiesReducer } from "redux/cities/slice";
 
 export default combineReducers({ cities: CitiesReducer });
