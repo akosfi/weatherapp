@@ -15,15 +15,20 @@ const citiesSlice = createSlice({
             state.defaultCities = action.payload.cities;
         },
 
-        loadDefaultCitiesError: noop,
+        loadDefaultCitiesError: (state, action: PayloadAction<{ error: string }>) => {
+            state.error = action.payload.error;
+        },
 
-        addSavedCityRequest: (state, action: PayloadAction<{ cityId: number }>) => {},
+        addSavedCityRequest: (state, action: PayloadAction<{ cityId: number, navigate?: (href: string) => void }>) => {
+        },
 
         addSavedCitySuccess: (state, action: PayloadAction<{ savedCities: SavedCity[] }>) => {
             state.savedCities = action.payload.savedCities;
         },
 
-        addSavedCityError: noop
+        addSavedCityError: (state, action: PayloadAction<{ error: string }>) => {
+            state.error = action.payload.error;
+        }
     }
 });
 

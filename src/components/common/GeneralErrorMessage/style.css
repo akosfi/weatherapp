@@ -1,0 +1,18 @@
+.GeneralErrorMessage {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
+    width: 80vw;
+    padding: 16px;
+    background: #ff8ca1;
+    border-radius: 20px;
+}
+
+.GeneralErrorMessage p {
+    text-align: center;
+    color: #94001b;
+    font-size: 24px;
+    font-weight: bold;
+}

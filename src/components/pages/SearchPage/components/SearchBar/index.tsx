@@ -16,11 +16,14 @@ const SearchBar: FC<Props> = ({ selectedCityId, setSelectedCityId }) => {
         const [searchValue, setSearchValue] = useState<string>("");
 
         const defaultCities = useSelector(CitiesSelectors.getDefaultCities);
+        const savedCities = useSelector(CitiesSelectors.getSavedCities);
+        const savedCityIds = map(savedCities, ({ id }) => id);
+
         const matchingCities = useMemo(() =>
                 slice(filter(defaultCities,
-                        ({ name }) => toLower(name).includes(toLower(searchValue))),
+                        ({ id, name }) => toLower(name).includes(toLower(searchValue)) && !savedCityIds.includes(id)),
                     0,
-                    7),
+                    8),
             [searchValue, defaultCities]);
 
         useEffect(() => {

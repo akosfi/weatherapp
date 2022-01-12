@@ -1,5 +1,5 @@
 import { select, retry, put } from "redux-saga/effects";
-import { find, filter } from "lodash";
+import { find, filter, isFunction } from "lodash";
 //
 import CitiesSelectors from "redux/cities/selectors";
 import { CitiesActions } from "redux/cities/slice";
@@ -9,6 +9,7 @@ import openWeatherAppApi from "utils/api/openWeatherAppApi";
 function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSavedCityRequest>) {
     try {
         const cityId = payload.cityId;
+        const navigate = payload.navigate;
 
         const cities: City[] = yield select(CitiesSelectors.getDefaultCities);
         const city = find(cities, ({ id }) => id === cityId);
@@ -43,8 +44,13 @@ function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSaved
 
         yield put(CitiesActions.addSavedCitySuccess({ savedCities: savedCitiesWithCurrent }));
 
-    } catch (e) {
+        if (isFunction(navigate)) {
+            navigate(`/city/${cityId}`);
+        }
 
+    } catch (e) {
+        console.log(e);
+        yield put(CitiesActions.addSavedCityError({ error: "Failed to add city. Please try refreshing the application." }));
     }
 }
 

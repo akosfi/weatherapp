@@ -27,7 +27,7 @@ const SearchBarResult: FC<Props> = ({ searchValue, name, id, selectedCityId, set
             }
             if (searchValueMatchIndexes.includes(index)) {
                 const matchedSubString = name.substring(index, index + searchValueLength);
-                formattedStringArray.push(<span>{matchedSubString}</span>);
+                formattedStringArray.push(<span key={index}>{matchedSubString}</span>);
                 currentIndex = index + searchValueLength;
             } else {
                 formattedStringArray.push(name[currentIndex]);
@@ -37,9 +37,6 @@ const SearchBarResult: FC<Props> = ({ searchValue, name, id, selectedCityId, set
 
         return formattedStringArray;
     }, [searchValue, name]);
-
-    console.log(id === selectedCityId);
-    console.log(id, name)
 
     return <p className="SearchBarResult" onClick={() => setSelectedCityId(id)}>{id === selectedCityId ?
         <u>{formattedString}</u> : formattedString}</p>;

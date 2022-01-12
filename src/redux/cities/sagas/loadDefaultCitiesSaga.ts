@@ -1,8 +1,8 @@
 import { retry, put } from "redux-saga/effects";
 import { map, compact } from "lodash";
 //
-import restCountriesApi from "../../../utils/api/restCountriesApi";
-import { CitiesActions } from "../slice";
+import restCountriesApi from "utils/api/restCountriesApi";
+import { CitiesActions } from "redux/cities/slice";
 
 function* loadDefaultCitiesSaga() {
     try {
@@ -17,10 +17,9 @@ function* loadDefaultCitiesSaga() {
         }));
 
         yield put(CitiesActions.loadDefaultCitiesSuccess({ cities }));
-
-
     } catch (e) {
-
+        console.log(e);
+        yield put(CitiesActions.loadDefaultCitiesError({ error: "Failed to load cities. Please try refreshing the application." }));
     }
 }
 

@@ -12,8 +12,10 @@ const getSavedCities = (state: StoreState) => getState(state).savedCities;
 
 const createGetFindSavedCityById = (id: number) => (state: StoreState) => find(getSavedCities(state), ({ id: _id }) => id === _id);
 
+const getError = (state: StoreState) => getState(state).error;
+
 const CitiesSelectors = {
-    getDefaultCities, getSavedCities, createGetFindSavedCityById, createGetFindDefaultCityByName
+    getDefaultCities, getSavedCities, createGetFindSavedCityById, createGetFindDefaultCityByName, getError
 };
 
 export default CitiesSelectors;
