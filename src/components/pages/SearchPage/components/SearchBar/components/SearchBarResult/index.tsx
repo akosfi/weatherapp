@@ -10,10 +10,9 @@ type Props = {
     setSelectedCityId: (id: number | null) => void;
     searchValue: string;
     name: string;
-}
+};
 
 const SearchBarResult: FC<Props> = ({ searchValue, name, id, selectedCityId, setSelectedCityId }) => {
-
     const formattedString = useMemo(() => {
         const searchValueMatches = Array.from(name.matchAll(new RegExp(`(${searchValue})`, "gi")));
         const searchValueLength = searchValue.length;
@@ -38,7 +37,10 @@ const SearchBarResult: FC<Props> = ({ searchValue, name, id, selectedCityId, set
         return formattedStringArray;
     }, [searchValue, name]);
 
-    return <p className="SearchBarResult" onClick={() => setSelectedCityId(id)}>{id === selectedCityId ?
-        <u>{formattedString}</u> : formattedString}</p>;
+    return (
+        <p className="SearchBarResult" onClick={() => setSelectedCityId(id)}>
+            {id === selectedCityId ? <u>{formattedString}</u> : formattedString}
+        </p>
+    );
 };
 export default memo(SearchBarResult);

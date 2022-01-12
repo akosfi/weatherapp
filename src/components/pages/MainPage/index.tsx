@@ -15,15 +15,21 @@ const MainPage: FC = () => {
 
     const createHandleOnClick = (href: string) => () => navigate(href);
 
-    return <div className="MainPage">
-        <CitiesGeneralErrorMessage />
-        <div className="city-list">
-            {map(savedCities, ({ id, name }) =>
-                <p key={id} className="city-list-item" onClick={createHandleOnClick(`/city/${id}`)}>{name}</p>
-            )}
-            <p className="city-list-button" onClick={createHandleOnClick("/search")}>+</p>
+    return (
+        <div className="MainPage">
+            <CitiesGeneralErrorMessage />
+            <div className="city-list">
+                {map(savedCities, ({ id, name }) => (
+                    <p key={id} className="city-list-item" onClick={createHandleOnClick(`/city/${id}`)}>
+                        {name}
+                    </p>
+                ))}
+                <p className="city-list-button" onClick={createHandleOnClick("/search")}>
+                    +
+                </p>
+            </div>
         </div>
-    </div>;
+    );
 };
 
 export default memo(MainPage);

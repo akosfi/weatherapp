@@ -20,5 +20,6 @@ ReactDOM.render(
             </BrowserRouter>
         </Provider>
     </StrictMode>,
-    document.getElementById("root"));
+    document.getElementById("root")
+);
 registerServiceWorker();

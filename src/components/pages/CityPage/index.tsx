@@ -24,30 +24,36 @@ const CityPage: FC = () => {
         return null;
     }
 
-    return <div className="CityPage">
-        <div className="content">
-            <BackButton href={"/"} />
-            <div className="information">
-                <p className="time">{currentDate.hour}<br />{currentDate.minute}</p>
-                <p className="city">{savedCity.name}</p>
+    return (
+        <div className="CityPage">
+            <div className="content">
+                <BackButton href={"/"} />
+                <div className="information">
+                    <p className="time">
+                        {currentDate.hour}
+                        <br />
+                        {currentDate.minute}
+                    </p>
+                    <p className="city">{savedCity.name}</p>
 
-                <i className={`temp-image wi wi-owm-night-${savedCity.weather.iconId}`} />
-                <p className="temp-description">{savedCity.weather.description}</p>
-                <div className="temp-details">
-                    <i className="temp-details-image wi wi-thermometer" />
-                    <p className="temp-details-text">{savedCity.weather.temp}&#8451;</p>
-                </div>
-                <div className="temp-details">
-                    <i className="temp-details-image wi wi-sunrise" />
-                    <p className="temp-details-text">{`${sunriseDate.hour}:${sunriseDate.minute}`}</p>
-                </div>
-                <div className="temp-details">
-                    <i className="temp-details-image wi wi-sunset" />
-                    <p className="temp-details-text">{`${sunsetDate.hour}:${sunsetDate.minute}`}</p>
+                    <i className={`temp-image wi wi-owm-night-${savedCity.weather.iconId}`} />
+                    <p className="temp-description">{savedCity.weather.description}</p>
+                    <div className="temp-details">
+                        <i className="temp-details-image wi wi-thermometer" />
+                        <p className="temp-details-text">{savedCity.weather.temp}&#8451;</p>
+                    </div>
+                    <div className="temp-details">
+                        <i className="temp-details-image wi wi-sunrise" />
+                        <p className="temp-details-text">{`${sunriseDate.hour}:${sunriseDate.minute}`}</p>
+                    </div>
+                    <div className="temp-details">
+                        <i className="temp-details-image wi wi-sunset" />
+                        <p className="temp-details-text">{`${sunsetDate.hour}:${sunsetDate.minute}`}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>;
+    );
 };
 
 export default memo(CityPage);

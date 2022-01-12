@@ -8,10 +8,9 @@ function* initAppSaga() {
     try {
         yield put(CitiesActions.loadDefaultCitiesRequest());
 
-
-        const action: ReturnType<typeof CitiesActions.loadDefaultCitiesSuccess | typeof CitiesActions.loadDefaultCitiesError> = yield take([
-            CitiesActions.loadDefaultCitiesSuccess.type, CitiesActions.loadDefaultCitiesError.type
-        ]);
+        const action: ReturnType<
+            typeof CitiesActions.loadDefaultCitiesSuccess | typeof CitiesActions.loadDefaultCitiesError
+        > = yield take([CitiesActions.loadDefaultCitiesSuccess.type, CitiesActions.loadDefaultCitiesError.type]);
 
         if (action.type === CitiesActions.loadDefaultCitiesError.type) {
             return;

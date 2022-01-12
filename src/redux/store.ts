@@ -7,7 +7,6 @@ import initialState from "./state";
 
 const sagaMiddleware = createSagaMiddleware();
 
-
 function composeEnhancers() {
     if (typeof window !== "undefined" && typeof (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ !== "undefined") {
         return (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;

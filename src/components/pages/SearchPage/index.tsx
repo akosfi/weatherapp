@@ -14,18 +14,27 @@ const SearchPage: FC = () => {
 
     const dispatch = useDispatch();
 
-    const handleSaveClick = () => dispatch(CitiesActions.addSavedCityRequest({
-        cityId: selectedCityId as number,
-        navigate
-    }));
+    const handleSaveClick = () =>
+        dispatch(
+            CitiesActions.addSavedCityRequest({
+                cityId: selectedCityId as number,
+                navigate
+            })
+        );
 
-    return <div className="SearchPage">
-        <div className="content">
-            <BackButton href={"/"} />
-            <SearchBar selectedCityId={selectedCityId} setSelectedCityId={setSelectedCityId} />
-            {selectedCityId !== null && <div className="save-button" onClick={handleSaveClick}>Save</div>}
+    return (
+        <div className="SearchPage">
+            <div className="content">
+                <BackButton href={"/"} />
+                <SearchBar selectedCityId={selectedCityId} setSelectedCityId={setSelectedCityId} />
+                {selectedCityId !== null && (
+                    <div className="save-button" onClick={handleSaveClick}>
+                        Save
+                    </div>
+                )}
+            </div>
         </div>
-    </div>;
+    );
 };
 
 export default memo(SearchPage);

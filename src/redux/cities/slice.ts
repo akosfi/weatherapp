@@ -19,8 +19,10 @@ const citiesSlice = createSlice({
             state.error = action.payload.error;
         },
 
-        addSavedCityRequest: (state, action: PayloadAction<{ cityId: number, navigate?: (href: string) => void }>) => {
-        },
+        addSavedCityRequest: (
+            state,
+            action: PayloadAction<{ cityId: number; navigate?: (href: string) => void }>
+        ) => {},
 
         addSavedCitySuccess: (state, action: PayloadAction<{ savedCities: SavedCity[] }>) => {
             state.savedCities = action.payload.savedCities;

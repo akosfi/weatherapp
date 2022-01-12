@@ -11,5 +11,4 @@ const useFormattedTimeFromDate = (date: Date = new Date()) =>
         return { hour, minute };
     }, [date]);
 
-
 export default useFormattedTimeFromDate;

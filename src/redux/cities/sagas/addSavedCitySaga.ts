@@ -25,7 +25,6 @@ function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSaved
             `/weather?q=${city.name}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
         );
 
-
         const savedCity: SavedCity = {
             id: cityId,
             name: city.name,
@@ -47,10 +46,11 @@ function* addSavedCitySaga({ payload }: ReturnType<typeof CitiesActions.addSaved
         if (isFunction(navigate)) {
             navigate(`/city/${cityId}`);
         }
-
     } catch (e) {
         console.log(e);
-        yield put(CitiesActions.addSavedCityError({ error: "Failed to add city. Please try refreshing the application." }));
+        yield put(
+            CitiesActions.addSavedCityError({ error: "Failed to add city. Please try refreshing the application." })
+        );
     }
 }
 

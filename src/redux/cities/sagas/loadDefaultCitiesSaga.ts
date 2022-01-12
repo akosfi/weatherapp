@@ -11,7 +11,7 @@ function* loadDefaultCitiesSaga() {
         const cityNames = compact(map(citiesData, ({ capital }) => capital && capital[0]));
 
         let id = 0;
-        const cities = map(cityNames, (cityName) => ({
+        const cities = map(cityNames, cityName => ({
             id: id++,
             name: cityName
         }));
@@ -19,7 +19,11 @@ function* loadDefaultCitiesSaga() {
         yield put(CitiesActions.loadDefaultCitiesSuccess({ cities }));
     } catch (e) {
         console.log(e);
-        yield put(CitiesActions.loadDefaultCitiesError({ error: "Failed to load cities. Please try refreshing the application." }));
+        yield put(
+            CitiesActions.loadDefaultCitiesError({
+                error: "Failed to load cities. Please try refreshing the application."
+            })
+        );
     }
 }
 

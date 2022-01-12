@@ -1,7 +1,7 @@
 export type City = {
     id: number;
     name: string;
-}
+};
 
 export type Weather = {
     iconId: number;
@@ -9,10 +9,10 @@ export type Weather = {
     temp: number;
     sunrise: number;
     sunset: number;
-}
+};
 
 export type SavedCity = {
     id: number;
     name: string;
     weather: Weather;
-}
+};
