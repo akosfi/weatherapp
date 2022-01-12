@@ -23,7 +23,7 @@ const SearchBar: FC<Props> = ({ selectedCityId, setSelectedCityId }) => {
                 slice(filter(defaultCities,
                         ({ id, name }) => toLower(name).includes(toLower(searchValue)) && !savedCityIds.includes(id)),
                     0,
-                    8),
+                    7),
             [searchValue, defaultCities]);
 
         useEffect(() => {
@@ -32,8 +32,11 @@ const SearchBar: FC<Props> = ({ selectedCityId, setSelectedCityId }) => {
 
         return (
             <div className="SearchBar">
-                <input type="text" className="search-bar" value={searchValue}
-                       onChange={(e) => setSearchValue(e?.target?.value || "")} />
+                <div className="search-bar" >
+                    <input type="text" value={searchValue}
+                           onChange={(e) => setSearchValue(e?.target?.value || "")} />
+                    <span>V</span>
+                </div>
                 <div className="search-results">
                     {!!searchValue &&
                         map(matchingCities, ({ id, name }) =>

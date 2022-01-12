@@ -14,7 +14,7 @@
 
 
 .CityPage .information .time {
-  font-size: 48px;
+  font-size: 64px;
   font-weight: bold;
   color: #645eff;
 }
@@ -27,8 +27,8 @@
 
 .CityPage .information .temp-image {
   font-size: 88px;
-  margin: 64px 0;
-  color: #645eff;
+  margin: 64px 0 24px 0;
+  color: #70bfff;
 }
 
 .CityPage .information .temp-description {
@@ -52,5 +52,5 @@
 }
 .CityPage .information .temp-details .temp-details-text {
   flex: 0 0 70%;
-  color: #645eff;
+  color: #70bfff;
 }
